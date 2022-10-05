@@ -6,14 +6,14 @@ app.use(express.urlencoded());
 app.get("/", (req, res) => {
   res.send(`
     <form action="/weather" method="POST">
-        <input type="text" name="cityName" ></input>
+        <input type="text" name="city" ></input>
         <input type="submit"></input>
     </form>
     `);
 });
 app.use(express.json());
 app.post("/weather", (req, res, next) => {
-  const cityName = req.body.cityName;
+  const cityName = req.body.city;
   res.send(cityName);
 });
 
