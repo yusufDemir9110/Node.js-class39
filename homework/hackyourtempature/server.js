@@ -3,15 +3,9 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(express.urlencoded());
+
 app.get("/", (req, res) => {
-  res.send(`
-    <h3>Hello from backend to frontend</h3>
-    <form action="/weather" method="POST">
-        <input type="text" name="city" ></input>
-        <input type="submit"></input>
-    </form>
-    `);
+  res.send(`Hello from backend to frontend`);
 });
 
 app.post("/weather", (req, res, next) => {
